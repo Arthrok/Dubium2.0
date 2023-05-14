@@ -1,0 +1,69 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 81px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 2px -2px gray;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.logo {
+  height: inherit;
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.item a:hover {
+  color: cadetblue;
+}
+
+.pesquisa {
+  width: 25%;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  background-color: #414141;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.pesquisa svg {
+  color: #ffffff;
+  padding-left: 3px;
+}
+
+.pesquisa input {
+  width: 95%;
+  height: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.header-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 13%;
+}
+
+.login-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bichinho {
+  height: inherit;
+}
