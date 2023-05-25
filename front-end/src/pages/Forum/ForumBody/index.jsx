@@ -15,12 +15,12 @@ import StarIcon from "@mui/icons-material/Star";
 apiRequest.defaults.withCredentials = true
 
 export default function ForumBody({ materiaPesquisada }) {
-  const [allQuest, setAllQuest ] = useState([]);
+  const [allQuest, setAllQuest] = useState([]);
   const { elementoSidebar } = useContext(SidebarContext);
 
   useEffect(() => {
     function getPerguntas() {
-      if(elementoSidebar) {
+      if (elementoSidebar) {
         apiRequest.get("/pergunta/view")
           .then(response => {
             let filter = response.data.filter(data => data.curso == elementoSidebar)
@@ -43,9 +43,9 @@ export default function ForumBody({ materiaPesquisada }) {
   }, [elementoSidebar])
 
 
-  useEffect(()=>{
-    function allQuest(){
-      apiRequest.get('/pergunta/view', {withCredentials: true})
+  useEffect(() => {
+    function allQuest() {
+      apiRequest.get('/pergunta/view', { withCredentials: true })
         .then(response => {
           setAllQuest(response.data)
         })
@@ -64,7 +64,7 @@ export default function ForumBody({ materiaPesquisada }) {
           <Link
             to={isAuthenticated() ? "/criar-pergunta" : "/login"}
           >
-            <button>FAÇA UMA PERGUNTA</button>
+            <button className="buttonPergunta">FAÇA UMA PERGUNTA</button>
           </Link>
         </div>
         {allQuest.map((data, index) => {

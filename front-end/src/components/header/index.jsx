@@ -1,7 +1,7 @@
 import "./style.css";
 
 import bichinho from "../../assets/images/bichinho.png";
-import logo from "../../assets/images/logo.jpg";
+import logo from "../../assets/images/lgLetraBranca.png";
 
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import PersonIcon from "@mui/icons-material/Person";
@@ -62,10 +62,10 @@ function Header({ setMateriaPesquisada, setLogado }) {
         </li>
       </ul>
       <div className="pesquisa">
-        <SearchIcon />
-        <input
+        <div id ="iconePesquisa"><SearchIcon /></div>
+        <input id = "busca"
           type="text"
-          placeholder="BUSCAR POR MATÉRIA OU USUÁRIO"
+          placeholder="Buscar por matéria ou usuário"
           onChange={handleChange}
         />
       </div>

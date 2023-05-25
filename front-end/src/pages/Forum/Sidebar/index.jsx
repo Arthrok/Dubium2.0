@@ -13,28 +13,33 @@ const Sidebar = ({ pagina }) => {
   const { elementoSidebar } = useContext(SidebarContext);
 
 
-  
+
 
   return (
-    <ul className="sidebar-forum">
-      {forumData.map((data, index) => (
-        <li key={index}>
-          <Link
-            className={
-              isActive === index ? "item-sidebar is-active" : "item-sidebar"
-            }
-            to={pagina == "forum" ? data.pathPergunta : data.pathAvisos}
-            onClick={() => {
-              setIsActive(index);
-              setElementoSidebar(index);
-            }}
-          >
-            {data.icon}
-            {data.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <ul className="sidebar-forum">
+        {forumData.map((data, index) => (
+          <li key={index}>
+            <Link
+              className={
+                isActive === index ? "item-sidebar is-active" : "item-sidebar"
+              }
+              to={pagina == "forum" ? data.pathPergunta : data.pathAvisos}
+              onClick={() => {
+                setIsActive(index);
+                setElementoSidebar(index);
+              }}
+            >
+              {data.icon}
+              {data.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <ul className="navRight">
+        <div><Link><a className="buttonChat">Acessar o Chat</a></Link></div>
+      </ul>
+    </div>
   );
 };
 
