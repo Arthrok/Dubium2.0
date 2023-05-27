@@ -21,7 +21,6 @@ app.use(cors(corsPort))
 //cookie
 app.use(cookieParser())
 
-
 app.get("/", (req, res) => {
     res.status(200).cookie("teste", "sasasa", {httpOnly: true, secure: true, sameSite: "strict", path: '/'}).send("ok")
 })
@@ -33,6 +32,8 @@ app.use("/resposta", resposta)
 app.use("/usuario", usuario)
 app.use("/aviso", aviso)
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`O servidor está rodando em: http://localhost:${PORT}`)
 })
+
+module.exports = server;
