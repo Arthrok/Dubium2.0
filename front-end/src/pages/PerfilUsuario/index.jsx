@@ -159,6 +159,37 @@ export default function PerfilUsuario({ setLogado }) {
               </li>
             </div>
           )}
+
+          {/*botão da mensagem para outro usuário*/}
+          {token && idUsuario != jwt(token).secret.id && (
+
+            <Link to={`/editar-usuario/${jwt(token).secret.id}`}>
+              <li>
+                <div className="buttonEnviarMensagem">
+                  Mensagem
+                </div>
+              </li>
+            </Link>
+
+            /*<div className="pu-opcoes">
+              <Link to={`/editar-usuario/${jwt(token).secret.id}`}>
+                <li>
+                  <button className="pu-editar">
+                    <EditIcon sx={{ fontSize: 16 }} />
+                    EDITAR CONTA
+                  </button>
+                </li>
+              </Link>
+
+              <li>
+                <button className="pu-excluir" onClick={deletarUsuario}>
+                  <DeleteIcon sx={{ fontSize: 16 }} />
+                  EXCLUIR CONTA
+                </button>
+              </li>
+            </div>*/
+          )}
+
         </ul>
       </div>
       <PerguntasCadastradas idUsuario={idUsuario} />
